@@ -25,6 +25,7 @@ import org.usfirst.frc5933.Eve2019.subsystems.*;
 import org.usfirst.frc5933.Eve2019.subsystems.Arm.ArmPosition;
 
 import edu.wpi.first.cameraserver.*;
+import edu.wpi.cscore.UsbCamera;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -60,8 +61,9 @@ public class Robot extends TimedRobot {
 	public static EndGameSystem ender;
 	public static TongSpinners spinner;
 
-	//the camera server
+	//the camera server and camera objects
 	public static CameraServer server;
+	UsbCamera cam0, cam1;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -99,7 +101,16 @@ public class Robot extends TimedRobot {
 
 		SmartDashboard.putString("Software Guru: ", "Eric");
 	
-		server.startAutomaticCapture();
+		cam0 = server.startAutomaticCapture("FrontLeft",0);
+		cam1 = server.startAutomaticCapture("FrontRight",1);
+		cam0.setExposureAuto();
+		cam1.setExposureAuto();
+		cam0.setBrightness(10);
+		cam1.setBrightness(10);
+		cam0.setFPS(15);
+		cam1.setFPS(15);
+		cam1.setResolution(160, 120);
+		cam0.setResolution(160, 120);
 	}
 
 	/** 
