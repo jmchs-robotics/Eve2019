@@ -24,6 +24,8 @@ import org.usfirst.frc5933.Eve2019.commands.*;
 import org.usfirst.frc5933.Eve2019.subsystems.*;
 import org.usfirst.frc5933.Eve2019.subsystems.Arm.ArmPosition;
 
+import edu.wpi.first.cameraserver.*;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -58,6 +60,9 @@ public class Robot extends TimedRobot {
 	public static EndGameSystem ender;
 	public static TongSpinners spinner;
 
+	//the camera server
+	public static CameraServer server;
+
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -72,6 +77,8 @@ public class Robot extends TimedRobot {
 		roborio = new RoboRio();
 		ender = new EndGameSystem();
 		drivetrain = new Drivetrain();
+
+		server = RobotMap.server;
 
 		// OI must be constructed after subsystems. If the OI creates Commands
 		//(which it very likely will), subsystems are not guaranteed to be
@@ -91,6 +98,8 @@ public class Robot extends TimedRobot {
 		ender.init();
 
 		SmartDashboard.putString("Software Guru: ", "Eric");
+	
+		server.startAutomaticCapture();
 	}
 
 	/** 
