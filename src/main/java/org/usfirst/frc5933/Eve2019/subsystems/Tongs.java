@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Tongs extends Subsystem {
 	DoubleSolenoid tongsPiston = RobotMap.armTongsPiston;
-	DoubleSolenoid rampsPiston = RobotMap.EndGamePiston;
+	//DoubleSolenoid rampsPiston = RobotMap.EndGamePiston;
 
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.

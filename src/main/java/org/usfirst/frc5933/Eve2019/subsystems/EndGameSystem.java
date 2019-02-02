@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class EndGameSystem extends Subsystem {
 
-	DoubleSolenoid trigger = RobotMap.EndGamePiston;
+	//DoubleSolenoid trigger = RobotMap.EndGamePiston;
 	
 	Spark climber = RobotMap.endGameClimber;
     // Put methods for controlling this subsystem
@@ -37,7 +37,7 @@ public class EndGameSystem extends Subsystem {
     }
     
     public void setTriggerSolenoid(Value val) {
-    	trigger.set(val);
+    	//trigger.set(val);
     }
     
     public void setClimber(double vBus) {

@@ -59,7 +59,7 @@ public class RobotMap {
 
     //end game objects
     public static Spark endGameClimber;
-    public static DoubleSolenoid EndGamePiston;
+    //public static DoubleSolenoid EndGamePiston;
     
     //roborio objects
     public static DigitalInput[] DIPs;
@@ -99,7 +99,7 @@ public class RobotMap {
         tongsRightTong = new Spark(1);
         
         //instantiate PCM doublesolenoid for the double piston starting from ID 0, slot 0;
-        armTongsPiston = new DoubleSolenoid(0, 0, 1);
+        armTongsPiston = new DoubleSolenoid(0, 2, 3);
         
         //instantiate the array of digital inputs on the RIO. This contains all accessible DIPs (a bit overkill,
         //but useful for planning ahead).
@@ -114,7 +114,7 @@ public class RobotMap {
         roboRioAccelerometer = new BuiltInAccelerometer();
     
         //instantiate the end game actuators (a piston and Spark) on next available slots.
-        EndGamePiston = new DoubleSolenoid(0, 2, 3);
+        //EndGamePiston = new DoubleSolenoid(0, 2, 3);
         endGameClimber = new Spark(2);
 
         //instantiate the cameraserver.
